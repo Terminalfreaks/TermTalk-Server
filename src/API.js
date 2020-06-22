@@ -66,16 +66,6 @@ class API {
   static handlePOST(req, res, Service) {
     let paths = req.url.slice(1).split("/")
     if (paths[0] == "bots") return handleBot(req, res, Service)
-    if (!["channels", "members"].includes(paths[0])) {
-      let toWrite = JSON.stringify({
-        type: "notFound",
-        message: "Endpoint not found.",
-        code: 404,
-        success: false
-      })
-      res.writeHead(404, { "Content-Type": "application/json" })
-      return res.end(toWrite)
-    }
     if (!req.headers.authorization || !req.headers.authorization.startsWith("Bot ")) {
       let toWrite = JSON.stringify({
         method: "botValidate",
