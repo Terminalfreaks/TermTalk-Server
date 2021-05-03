@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Terminalfreaks/TermTalk-Server#readme",
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.1",
     "better-sqlite3": "^7.0.1",
     "flakeid": "^1.0.0",
     "socket.io": "^2.3.0"
