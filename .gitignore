@@ -3,3 +3,4 @@ node_modules/
 Databases/
 
 test.js
+/config.json
