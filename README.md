@@ -1,6 +1,4 @@
 # TermTalk-Server
-The server for TermTalk.
+This is the backbone of TermTalk- it allows for hosting of private servers.
 
-If you want more info, check [the main repo.](https://github.com/Terminalfreaks/TermTalk)
-# Server
-https://discord.gg/GBzFGPe
+I will be updating this readme soon - AJ Nicoloff
