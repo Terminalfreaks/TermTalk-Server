@@ -71,8 +71,8 @@ const io = require('socket.io')(server)
 if (Config.publicServer) {
 	if (["0.0.0.0", "localhost", "127.0.0.1", ""].includes(Config.publicIP)) console.log("Unable to publicly list server because ip is not public.")
 	const options = {
-		hostname: "servers.termtalk.app",
-		path: "/addserver",
+		hostname: "linkedweb.org",
+		path: "/termtalk/addserver",
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json"
@@ -97,6 +97,9 @@ if (Config.publicServer) {
 				Config.key = data.key
 				fs.writeFileSync("./config.json", JSON.stringify(Config, null, 4))
 				console.log("Server added to the server list!")
+			} else if (res.statusCode === 422) {
+				// should only occur if nginx is being stupid or if params are missing
+				console.log("Something went wrong adding your server to the list.")
 			} else {
 				if (raw !== "Server already listed.") return console.log(raw)
 			}
@@ -108,8 +111,8 @@ if (Config.publicServer) {
 } else if (Config.key) {
 	if (["0.0.0.0", "localhost", "127.0.0.1", ""].includes(Config.publicIP)) console.log("Unable to remove publicly listed server because ip is not public.")
 	const options = {
-		hostname: "servers.termtalk.app",
-		path: "/removeserver",
+		hostname: "linkedweb.org",
+		path: "/termtalk/removeserver",
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json"
@@ -748,7 +751,7 @@ function createServer(protocol, serverOptions) {
 				ip: Config.publicIP,
 				secure: Config.secure
 			})
-			res.writeHead(200, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://termtalk.app" })
+			res.writeHead(200, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://linkedweb.org" })
 			res.end(toWrite)
 			return
 		}
