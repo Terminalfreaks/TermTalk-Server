@@ -1,7 +1,7 @@
 {
 	"publicIP": "",
 	"port": "3000",
-	"adminUIDs": [],
+	"adminUIDs": [""],
 	"maxCharacterLength": 1600,
 	"allowLurking": false,
 	"maxSlots": 20,
