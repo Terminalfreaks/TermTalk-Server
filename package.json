@@ -24,7 +24,8 @@
     "bcrypt": "^5.0.1",
     "better-sqlite3": "^7.0.1",
     "flakeid": "^1.0.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^4.0.1",
+    "xmlhttprequest-ssl": "^1.6.2"
   },
   "bin": {
     "termtalk-server": "index.js"
