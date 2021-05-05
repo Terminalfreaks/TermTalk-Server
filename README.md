@@ -4,4 +4,6 @@ This branch/any movements to other branches such as beta, is in-progress code. I
 
 All code will be commented for easy accesibility, and for beginners to understand what is going on if they choose to contribute, or modify it to their needs!
 
-- AJ
+# Style Guide
+
+Utilizing Google's ESLint Package, this project will follow Google's style guide/conventions.
