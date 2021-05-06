@@ -5,7 +5,7 @@
  * @requires './Logger'
  */
 
-import Logger from './Logger.js';
+import Logger from '../util/Logger.js';
 import https from 'https';
 import http from 'http';
 import Config from '../configuration/settings.config.js';

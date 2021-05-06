@@ -26,6 +26,7 @@
   "homepage": "https://github.com/LinkedDev/TermTalk-Server#readme",
   "dependencies": {
     "better-sqlite3": "^7.3.1",
+    "dotenv": "^9.0.0",
     "mysql2": "^2.2.5",
     "ws": "^7.4.5"
   },

@@ -5,10 +5,10 @@
  * @requires './Webserver'
  */
 
-import Logger from './Logger.js';
+import Logger from '../util/Logger.js';
 import WebSocket from 'ws';
 import Config from '../configuration/settings.config.js';
-import Webserver from './Webserver.js';
+import Webserver from '../webserver/Webserver.js';
 /** Websocket Class */
 
 class Websocket extends Webserver {

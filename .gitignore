@@ -6,3 +6,4 @@ test.js
 /config.json
 config.json
 /src/configuration/settings.config.js
+/.env
