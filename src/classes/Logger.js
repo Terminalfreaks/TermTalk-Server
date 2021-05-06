@@ -3,7 +3,7 @@
  * @module Logger
  */
 
-import Config from '../configuration/settings.config.js';
+import Config from '../configuration/example.settings.config.js';
 
 /** Logger class. Pretty simple. */
 class Logger {
@@ -21,7 +21,7 @@ class Logger {
     }
     exit(error) {
         this.error(error);
-        this.error('Exit Error. Closing Server.');
+        this.error('Exit Error. Closing Server');
         process.exit(0); // No other standard NodeJS exit code available, defaulting to 0.
     }
 }
