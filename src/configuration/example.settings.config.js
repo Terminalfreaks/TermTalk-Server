@@ -13,7 +13,6 @@ export default {
         'messageRatelimit': 1,
         'publicServer': false,
         'serverName': 'TermTalk Server',
-        'secure': false,
         'keyFile': '',
         'chainFile': '',
         'certFile': '',
