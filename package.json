@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A self-hostable server for the application TermTalk",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -24,9 +25,13 @@
   },
   "homepage": "https://github.com/LinkedDev/TermTalk-Server#readme",
   "dependencies": {
+    "better-sqlite3": "^7.3.1",
+    "mysql2": "^2.2.5",
     "ws": "^7.4.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/eslint-parser": "^7.13.14",
     "eslint": "^7.25.0",
     "eslint-config-google": "^0.14.0"
   }
