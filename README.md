@@ -7,3 +7,7 @@ All code will be commented for easy accesibility, and for beginners to understan
 # Style Guide
 
 Utilizing Google's ESLint Package, this project will follow Google's style guide/conventions.
+
+# Configuration
+
+All configuration files can be modified, but are set to the defaults.
