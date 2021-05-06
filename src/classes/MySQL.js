@@ -20,7 +20,11 @@ class MySQL {
       this.#createPool();
       this.Connection = null;
    }
-
+   /**
+     * Creates a new MySQL Connection Pool
+     * @access private
+     *
+     */
    #createPool() {
       try {
          this.#checkConfig();
@@ -32,6 +36,11 @@ class MySQL {
          this.Connection = this.#Pool.getConnection();
       }
    }
+   /**
+  * Verifies the MySQL configuration in settings.config.js
+  * @access private
+  *
+  */
    #checkConfig() {
       // Does the config have the defaults still?
       // Does the config have missing required components?
