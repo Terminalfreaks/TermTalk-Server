@@ -16,8 +16,8 @@ class MySQL {
    static Connection;
    constructor(config) {
       this.#Config = config;
-      this.#createPool();
       this.Log = new Logger('MySQL');
+      this.#createPool();
       this.Connection = null;
    }
 
