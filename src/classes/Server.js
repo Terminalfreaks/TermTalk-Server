@@ -9,15 +9,16 @@ import MySQL from './MySQL.js';
 import SQLite from './SQLite.js';
 import Config from '../configuration/settings.config.js';
 import Logger from './Logger.js';
+import Websocket from './Websocket.js';
 
 /** Base class that (most) other classes will build off of. */
-class Server {
+class Server extends Websocket {
     #Cache;
     static DB;
     static Config;
     static Log;
-
     constructor() {
+        super();
         this.#Cache = new Map();
         this.Config = Config.settings;
         this.Log = new Logger('Server');
