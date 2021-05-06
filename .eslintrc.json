@@ -17,6 +17,7 @@
         "indent": "off",
         "max-len": "off",
         "eol-last": "off",
-        "require-jsdoc": "off"
+        "require-jsdoc": "off",
+        "object-curly-spacing": "off"
     }
 }
