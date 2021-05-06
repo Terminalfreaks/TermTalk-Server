@@ -7,9 +7,16 @@
     "extends": [
         "google"
     ],
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
-        "ecmaVersion": 12
+        "ecmaVersion": 12,
+        "requireConfigFile": false
     },
     "rules": {
+        "semi": [2, "always"],
+        "indent": "off",
+        "max-len": "off",
+        "eol-last": "off",
+        "require-jsdoc": "off"
     }
 }
