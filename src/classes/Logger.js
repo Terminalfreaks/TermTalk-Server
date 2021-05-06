@@ -3,7 +3,7 @@
  * @module Logger
  */
 
-import Config from '../configuration/example.settings.config.js';
+import Config from '../configuration/settings.config.js';
 
 /** Logger class. Pretty simple. */
 class Logger {
