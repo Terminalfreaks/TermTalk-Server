@@ -9,7 +9,6 @@ export default {
         'allowLurking': false,
         'maxSlots': 20,
         'saveLoadHistory': true,
-        'channels': [],
         'messageRatelimit': 1,
         'publicServer': false,
         'serverName': 'TermTalk Server',
@@ -19,6 +18,7 @@ export default {
         'certFile': '',
         'enableAPIEndpoints': true,
         'logLoad': true,
+        'storeChats': true,
         'database': {
             'SQLite': true,
             'MySQL': false,
