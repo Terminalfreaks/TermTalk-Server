@@ -11,8 +11,7 @@ class Database {
     static Action;
     static Config;
     static Log;
-    #Log = new Logger('Database');
-    #Errors = []; // on error, store the message, will print at the end
+    #Log = new Logger('Database'); // why two? - we want a private one for the Database class. Otherwise it is overriden.
     #Type;
     constructor(type) {
         this.Config = Config.settings[type];
@@ -31,10 +30,11 @@ class Database {
         }
         // Check SQLite (this is kinda not very efficient, but I found weird inconsistencies with locking and checking master table)
         if (this.#Type == 'SQLite') {
+            const Errors = [];
             for (const i in tables) {
-                if (!connection.prepare('SELECT count(*) FROM sqlite_master WHERE type=\'table\' AND name = ?;').get(tables[i])['count(*)']) this.#Errors.push(tables[i]);
+                if (!connection.prepare('SELECT count(*) FROM sqlite_master WHERE type=\'table\' AND name = ?;').get(tables[i])['count(*)']) Errors.push(tables[i]);
             }
-            if (this.#Errors.length > 0) this.Log.exit('Missing tables ' + this.#Errors.map((error) => error));
+            if (Errors.length > 0) this.Log.exit('Missing tables ' + Errors.map((error) => error));
         }
     }
 }
