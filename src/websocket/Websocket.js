@@ -7,7 +7,6 @@
 
 import Logger from '../util/Logger.js';
 import WebSocket from 'ws';
-import Config from '../configuration/settings.config.js';
 import Webserver from '../webserver/Webserver.js';
 /** Websocket Class */
 
@@ -22,7 +21,6 @@ class Websocket extends Webserver {
     };
     #createWebsocket() {
         this.WS = new WebSocket.Server({ server: this.Server });
-        this.Server.listen(Config.settings.port);
         this.Log.write('Websocket Spawned');
     }
 }
