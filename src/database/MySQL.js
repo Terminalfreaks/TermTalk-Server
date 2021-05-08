@@ -35,6 +35,7 @@ class MySQL extends Database {
       this.Pool = Driver.createPool(this.Config);
       this.Log.write('Creating a new Connection Pool @ ' + this.Config.host);
       this.#testConnection(); // this will kill the server if a new connection cannot be obtained
+      this.check(this.Pool); // confirm the database will work for the version
    }
    /**
   * Tests a new MySQL Connection Pool
