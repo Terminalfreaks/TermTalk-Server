@@ -9,24 +9,25 @@ import Logger from '../util/Logger.js';
 import https from 'https';
 import http from 'http';
 import Config from '../configuration/settings.config.js';
-/** Websocket Class */
+/** Webserver Class */
 
 class Webserver {
     static Server;
-    static Log
-
+    static Log;
+    static Config;
     constructor() {
         this.Log = new Logger('Webserver');
+        this.Config = Config.settings;
         this.#createWebserver();
     };
     #createWebserver() {
-        const options = Config.settings.secure ? {
-            key: fs.readFileSync(Config.settings.keyFile, { encoding: 'utf8' }),
-            ca: fs.readFileSync(Config.settings.chainFile, { encoding: 'utf8' }),
-            cert: fs.readFileSync(Config.settings.certFile, { encoding: 'utf8' }),
+        const options = this.Config.secure ? {
+            key: fs.readFileSync(this.Config.keyFile, { encoding: 'utf8' }),
+            ca: fs.readFileSync(this.Config.chainFile, { encoding: 'utf8' }),
+            cert: fs.readFileSync(this.Config.certFile, { encoding: 'utf8' }),
         } : {};
-        this.Server = Config.settings.secure ? https.createServer(options) : http.createServer(options);
-        this.Log.write('Webserver Opened @ Port ' + Config.settings.port);
+        this.Server = this.Config.secure ? https.createServer(options) : http.createServer(options);
+        this.Log.write('Webserver Opened @ Port ' + this.Config.port);
     }
     static kill() {
         this.Log.write('Webserver Closing');
