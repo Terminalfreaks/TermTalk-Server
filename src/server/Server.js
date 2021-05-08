@@ -7,7 +7,6 @@
 
 import MySQL from '../database/MySQL.js';
 import SQLite from '../database/SQLite.js';
-import Config from '../configuration/settings.config.js';
 import Logger from '../util/Logger.js';
 import Websocket from '../websocket/Websocket.js';
 import dotenv from 'dotenv';
@@ -15,12 +14,10 @@ import dotenv from 'dotenv';
 class Server extends Websocket {
     #Cache;
     static DB;
-    static Config;
     static Log;
     constructor() {
         super();
         this.Log = new Logger('Server');
-        this.Config = Config.settings;
         this.#Cache = new Map();
         this.#loadEnv();
         this.DB = this.Config.database.MySQL ? new MySQL(this.Config.MySQL) : new SQLite(this.Config.SQLite);
