@@ -7,3 +7,4 @@ test.js
 config.json
 /src/configuration/settings.config.js
 /.env
+/src/database/termtalk.db
