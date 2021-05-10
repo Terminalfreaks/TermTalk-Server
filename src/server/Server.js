@@ -8,7 +8,7 @@
 import MySQL from '../database/MySQL.js';
 import SQLite from '../database/SQLite.js';
 import Logger from '../util/Logger.js';
-import Websocket from '../websocket/Websocket.js';
+import Websocket from './Websocket.js';
 import dotenv from 'dotenv';
 /** Base class that (most) other classes will build off of. */
 class Server extends Websocket {

@@ -7,7 +7,7 @@
 
 import Logger from '../util/Logger.js';
 import WebSocket from 'ws';
-import Webserver from '../webserver/Webserver.js';
+import Webserver from './Webserver.js';
 /** Websocket Class */
 
 class Websocket extends Webserver {

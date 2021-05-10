@@ -20,7 +20,7 @@ class Database {
         this.Action = null;
     }
     async check(connection) {
-        const tables = ['banned', 'messages', 'rooms', 'userRooms', 'sessions', 'users'];
+        let tables = ['banned', 'messages', 'rooms', 'userRooms', 'sessions', 'users'];
         if (this.#Type == 'MySQL') {
             const [rows] = await connection.execute('show tables');
             for (const i in tables) {
