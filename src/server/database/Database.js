@@ -3,17 +3,19 @@
  * @module Database
  */
 
-import Config from '../configuration/settings.config.js';
-import Logger from '../util/Logger.js';
+import Config from '../../configuration/settings.config.js';
+import Logger from '../../util/Logger.js';
+import EventEmitter from 'events';
 
 /** Main Database Class */
-class Database {
+class Database extends EventEmitter {
     static Action;
     static Config;
     static Log;
     #Log = new Logger('Database'); // why two? - we want a private one for the Database class. Otherwise it is overriden.
     #Type;
     constructor(type) {
+        super();
         this.Config = Config.settings[type];
         this.Log = new Logger(type);
         this.#Type = type;
@@ -27,6 +29,7 @@ class Database {
                 if (i) tables = tables.filter((table) => table !== Object.values(rows[i]).pop());
             }
             if (tables.length > 0) this.#Log.exit('Missing tables ' + this.tables.map((table) => table));
+            else this.emit('ready');
         }
         // Check SQLite (this is kinda not very efficient, but I found weird inconsistencies with locking and checking master table)
         if (this.#Type == 'SQLite') {
@@ -35,6 +38,7 @@ class Database {
                 if (!connection.prepare('SELECT count(*) FROM sqlite_master WHERE type=\'table\' AND name = ?;').get(tables[i])['count(*)']) Errors.push(tables[i]);
             }
             if (Errors.length > 0) this.Log.exit('Missing tables ' + Errors.map((error) => error));
+            else this.emit('ready');
         }
     }
 }

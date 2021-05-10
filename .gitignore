@@ -8,3 +8,4 @@ config.json
 /src/configuration/settings.config.js
 /.env
 /src/database/termtalk.db
+/src/server/database/termtalk.db

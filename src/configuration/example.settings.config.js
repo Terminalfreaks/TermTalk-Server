@@ -19,6 +19,7 @@ export default {
         'enableAPIEndpoints': true,
         'logLoad': true,
         'storeChats': true,
+        'debug': false,
         'database': {
             'SQLite': true,
             'MySQL': false,

@@ -12,17 +12,12 @@ import Webserver from './Webserver.js';
 
 class Websocket extends Webserver {
     static Log;
-    static WS;
-
     constructor() {
         super();
         this.Log = new Logger('Websocket');
-        this.#createWebsocket();
-    };
-    #createWebsocket() {
         this.WS = new WebSocket.Server({ server: this.Server });
         this.Log.write('Websocket Spawned');
-    }
+    };
 }
 
 export default Websocket;
