@@ -1,8 +1,8 @@
 /**
- * Manages the connections from the websocket
+ * Manages the initial connections from the websocket
  * @module Login
  */
-/** Connection Manager */
+/** Login Manager */
 class Login {
     constructor(Manager, Socket) {
         console.log('Login Called');

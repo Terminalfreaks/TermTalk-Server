@@ -6,7 +6,7 @@
 
 import Websocket from './Websocket.js';
 import Logger from '../util/Logger.js';
-import isJSON from '../functions/isJSON.js';
+import isJSON from '../util/isJSON.js';
 import fs from 'fs';
 import dirname from 'es-dirname';
 import Path from 'path';

@@ -5,15 +5,16 @@
  * @requires './Logger'
  */
 
-import Logger from '../util/Logger.js';
 import https from 'https';
 import http from 'http';
 import Config from '../configuration/settings.config.js';
 import EventEmitter from 'events';
+import Util from '../util/Util.js';
 /** Webserver Class */
 
 class Webserver extends EventEmitter {
     static Server;
+    static Util;
     static Log;
     static Config;
     #options = Config.settings.secure ? {
@@ -23,7 +24,8 @@ class Webserver extends EventEmitter {
     } : {};
     constructor() {
         super();
-        this.Log = new Logger('Webserver');
+        this.Util = new Util();
+        this.Log = new this.Util.Log('Webserver');
         this.Config = Config.settings;
         this.Server = this.Config.secure ? https.createServer(this.#options) : http.createServer(this.#options);
         this.Log.write('Webserver Opened @ Port ' + this.Config.port);
